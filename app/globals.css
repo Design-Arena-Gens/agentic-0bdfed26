@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #0A0A0F;
+  color: white;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .glow-purple {
+    box-shadow: 0 0 20px rgba(183, 148, 246, 0.4),
+                0 0 40px rgba(183, 148, 246, 0.2);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(103, 232, 249, 0.4),
+                0 0 40px rgba(103, 232, 249, 0.2);
+  }
+
+  .glow-magenta {
+    box-shadow: 0 0 20px rgba(244, 114, 182, 0.4),
+                0 0 40px rgba(244, 114, 182, 0.2);
+  }
+
+  .text-gradient-purple {
+    background: linear-gradient(135deg, #B794F6 0%, #67E8F9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-glow::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #B794F6, #67E8F9, #F472B6);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .card-glow:hover::before {
+    opacity: 0.5;
+  }
+}
